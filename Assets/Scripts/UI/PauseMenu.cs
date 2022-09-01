@@ -28,6 +28,8 @@ namespace Holylib.UI
             isOnPauseMenu = true;
             PauseCanvas.SetActive(true);
             Time.timeScale = 0;
+            SoundEffectController.SFXVolume(-1,0);
+            SoundEffectController.MusicVolume(-1, .2f);
         }
         public void BackToGame()
         {
@@ -35,6 +37,8 @@ namespace Holylib.UI
             isOnPauseMenu = false;
             PauseCanvas.SetActive(false);
             Time.timeScale = 1;
+            SoundEffectController.SFXVolume(-1,1);
+            SoundEffectController.MusicVolume(-1,1);
         }
 
         public void QuitGame()
