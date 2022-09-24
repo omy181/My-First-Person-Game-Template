@@ -42,16 +42,9 @@ namespace Holylib.SoundEffects
             if (sfx.playduration > 0)
             {
                 yield return new WaitForSeconds(sfx.playduration);
+                 SoundEffectController.StopSFX(this.gameObject);
             }
-            else
-            {
-                while (audiosource.isPlaying)
-                {
-                    yield return new WaitForSeconds(0.1f);
-                }
-            }
-
-            SoundEffectController.StopSFX(this.gameObject);
+      
         }
 
         IEnumerator PlayAfterTime()
